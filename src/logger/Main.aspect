@@ -1,0 +1,60 @@
+package logger;
+
+import hrm.*;
+
+public class Main {
+	private String test = Person.someStaticString();
+	public void v() {
+		Person p = new Person("Jan", "Student", 21);	
+		p.doFoo(5);
+	}
+	public static void main(String[] args) {
+		Main m = new Main();
+		m.v();	
+/*	
+		System.out.println("Creating persons...");
+		
+		Person p = new Person("Tom", "Student", 20);
+		System.out.println("Created person: " + p.getName() + ", " + p.getOccupation() + ", " + p.getAge() + " years old.");
+		
+		p = new Person("Jan", "Student", 21);
+		System.out.println("Created person: " + p.getName() + ", " + p.getOccupation() + ", " + p.getAge() + " years old.");
+		
+		p = new Person("Piet", "Medewerker", 25);
+		System.out.println("Created person: " + p.getName() + ", " + p.getOccupation() + ", " + p.getAge() + " years old.");
+		
+		Employee e = new Employee();
+		
+		System.out.println("Creating teams...");
+		Team t = new Team("Team 1");
+		
+		//System.out.println("Age: " + p.age);
+		//p.doFoo(5);
+		
+		
+
+		//System.out.println("Age" + p.age);
+		//System.out.println("a" + p.annotationTest());
+
+	
+		try {
+			p.exceptionTest(new Object());
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		
+		try {
+			p.exceptionTest2();
+		} catch (CheckedExceptionA e) {
+			System.out.println("sec");
+		}
+*/
+		//p.annotationTest();
+		//p.annotationTest2();
+	
+		/*
+		Test t = new Test();
+		t.d(t.a(), t.b(), t.c());
+		*/
+	}
+}

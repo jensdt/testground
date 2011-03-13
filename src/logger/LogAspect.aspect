@@ -1,0 +1,25 @@
+package logger;
+import hrm.*;
+
+aspect LogAspect {
+//	pointcut annotation() : callAnnotated(Deprecated); && call(String hrm.Person.annotationTest**());
+//	pointcut exception() : call(String hrm.Person.exceptionTest**());
+//	pointcut eCatch() : emptyCatch;
+//	pointcut fieldAc() : fieldRead(hrm.Person.age);
+	pointcut withArguments(Integer s) : arguments(s) && call(Integer hrm.Person.doFoo(Number)) && if(s > 6) && thisType(Main) && targetType(Person);
+	pointcut staticString() : call(String hrm.Person.someStaticString());
+ 
+	after_(Integer s) : withArguments(s) {
+		Logger.instance().log("I'm after a method invocation with parameter " + s);
+	}
+	
+	/*
+	inside_() : eCatch() {
+		Logger.instance().log("Empty catch!");
+	}
+
+	after_() : fieldAc() {
+		Logger.instance().log("I'm after a field read!");
+	}
+	*/
+}
